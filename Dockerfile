@@ -5,5 +5,5 @@ RUN cargo install --path .
 
 FROM debian:buster-slim
 RUN apt-get update && apt-get install -y extra-runtime-dependencies && rm -rf /var/lib/apt/lists/*
-COPY --from=builder /usr/local/cargo/bin/myapp /usr/local/bin/nether-helsinki
+COPY --from=builder /usr/local/cargo/bin/nether-helsinki /usr/local/bin/nether-helsinki
 CMD ["nether-helsinki"]
